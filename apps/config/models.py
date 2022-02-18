@@ -12,6 +12,7 @@ class empresa(models.Model):
     cnpj = models.CharField('CNPJ', max_length=18, unique=True)
     codigo_erp = models.CharField('Código ERP', max_length=10, blank=True, null=True)
     data_criacao = models.DateField('Data da Criação', blank=True, null=True)
+    documentos = models.FileField('Documentos',upload_to='uploads/documents/%Y/%m/%d/',help_text='Anexe o documento da convenção', null=True, blank=True)
 
     class Meta:
         verbose_name = 'Empresa'

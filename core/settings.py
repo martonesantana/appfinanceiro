@@ -138,8 +138,94 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 BATON = {
     'SITE_HEADER': 'Financeiro',
     'SITE_TITLE': 'Financeiro',
-    'SUPPORT_HREF': 'https://github.com/otto-torino/django-baton/issues',
+    'SUPPORT_HREF': 'https://github.com/martonesantana/appfinanceiro',
     'COPYRIGHT': 'copyright © 2020 | martonesantana', # noqa
-    'POWERED_BY': '<a href="https://www.otto.to.it">Otto srl</a>',
+    'POWERED_BY': '<a href="https://www.linkedin.com/in/martonesantos/">Martone Santana</a>',
+    'CONFIRM_UNSAVED_CHANGES': True,
+    'SHOW_MULTIPART_UPLOADING': True,
+    'ENABLE_IMAGES_PREVIEW': True,
+    'CHANGELIST_FILTERS_IN_MODAL': True,
+    'CHANGELIST_FILTERS_ALWAYS_OPEN': False,
+    'CHANGELIST_FILTERS_FORM': True,
+    'MENU_ALWAYS_COLLAPSED': False,
+    'MENU_TITLE': 'Menu',
+    'MESSAGES_TOASTS': False,
+    'GRAVATAR_DEFAULT_IMG': 'retro',
+    'LOGIN_SPLASH': '/static/core/img/login-splash.png',
+    'MENU': (
+        { 'type': 'title', 'label': 'Administrativo', 'apps': ('auth', ) },
+        {
+            'type': 'app',
+            'name': 'auth',
+            'label': 'Autenticação',
+            'icon': 'fa fa-lock',
+            'models': (
+                {
+                    'name': 'user',
+                    'label': 'Usuários',
+                    'icon': 'fas fa-user-alt',
+                },
+                {
+                    'name': 'group',
+                    'label': 'Grupos',
+                    'icon': 'fas fa-users',
+                },
+            )
+        },
+        {
+            'type': 'app',
+            'name': 'config',
+            'label': 'Cadastros',
+            'icon': 'fas fa-edit',
+            'models': (
+                {
+                    'name': 'empresa',
+                    'label': 'Empresas',
+                    'icon': 'fas fa-building',
+                },
+                {
+                    'name': 'planocontas',
+                    'label': 'Plano de Contas',
+                    'icon': 'fas fa-clipboard',
+                },
+                {
+                    'name': 'categoria',
+                    'label': 'Categorias',
+                    'icon': 'fas fa-layer-group',
+                },
+                {
+                    'name': 'fornecedor',
+                    'label': 'Fornecedores',
+                    'icon': 'fas fa-handshake',
+                },
+                {
+                    'name': 'conta',
+                    'label': 'Contas',
+                    'icon': 'fas fa-landmark',
+                },
+                {
+                    'name': 'centrocustos',
+                    'label': 'Centros de Custos',
+                    'icon': 'fas fa-boxes',
+                },
+            )
+        },
+                
+        { 'type': 'title', 'label': 'Financeiro', 'app': 'financeiro' },
+        {
+            'type': 'app',
+            'name': 'financeiro',
+            'label': 'Financeiro',
+            'icon': 'fas fa-coins',
+            'models': (
+                {
+                    'name': 'contasapagar',
+                    'label': 'Contas a Pagar',
+                    'icon': 'fas fa-file-invoice-dollar',
+                },
+                
+            )
+        },
+    ),        
     
 }
