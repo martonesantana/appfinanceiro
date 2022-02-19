@@ -12,6 +12,16 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+from django.conf.locale.pt_BR import formats as br_formats
+
+#Formato personalizados
+br_formats.DATE_FORMAT = 'd/m/Y'
+br_formats.DECIMAL_SEPARATOR = ','
+br_formats.THOUSAND_SEPARATOR = '.'
+br_formats.NUMBER_GROUPING = 3
+
+THOUSAND_SEPARATOR='.',
+USE_THOUSAND_SEPARATOR=True
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

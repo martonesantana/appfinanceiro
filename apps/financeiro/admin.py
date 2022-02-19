@@ -7,7 +7,7 @@ from baton.admin import DropdownFilter, ChoicesDropdownFilter
 
 @admin.register(contasapagar)
 class ContasaPagarAdmin(admin.ModelAdmin):
-    list_display = ('empresas', 'data_competencia_br', 'data_vencimento','conta','categoria','descricao', 'fornecedor', 'valor', 'pago')
+    list_display = ('empresas', 'data_competencia', 'data_vencimento','conta','categoria','descricao', 'fornecedor', 'valor', 'pago')
     search_fields = ['empresas__nome','descricao','categoria__descricao','fornecedor__nome_fantasia']
     list_filter = (
                     ('empresas__nome', DropdownFilter),
@@ -42,9 +42,3 @@ class ContasaPagarAdmin(admin.ModelAdmin):
             ],
         }),
     )
-
-
-    @admin.display(description='Data de Compra')
-    def data_competencia_br(self, obj):
-        if obj.data_competencia:
-            return obj.data_competencia.strftime('%d/%m/%Y')
