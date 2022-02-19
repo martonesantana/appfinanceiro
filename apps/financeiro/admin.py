@@ -1,7 +1,8 @@
 from django.contrib import admin
 
 from apps.financeiro.models import contasapagar
-from baton.admin import DropdownFilter, ChoicesDropdownFilter
+from baton.admin import DropdownFilter
+from rangefilter.filters import DateRangeFilter
 
 # Register your models here.
 
@@ -14,7 +15,8 @@ class ContasaPagarAdmin(admin.ModelAdmin):
                     ('categoria__descricao', DropdownFilter),
                     ('descricao', DropdownFilter),
                     ('fornecedor__nome_fantasia', DropdownFilter),
-                    ('data_vencimento', DropdownFilter),
+                    ('data_competencia', DateRangeFilter),
+                    ('data_vencimento', DateRangeFilter),
                     ('pago', DropdownFilter),
                 )
     list_per_page = 5
