@@ -1,1 +1,1 @@
-web: gunicorn analiseCustos.wsgi --log-file -
+web: gunicorn core.wsgi --log-file -
