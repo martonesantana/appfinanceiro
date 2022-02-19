@@ -18,6 +18,31 @@ class ContasaPagarAdmin(admin.ModelAdmin):
                     ('pago', DropdownFilter),
                 )
     list_per_page = 5
+    fieldsets = (
+        (None, {
+            "fields":[ (
+                       'descricao',
+                       'categoria',
+            )],
+        }),
+        (None, {
+            "fields":[ ('conta', 'valor'),
+                       ('data_competencia','data_vencimento',),
+            ],
+        }),
+        (None, {
+            "fields":[ ('fornecedor', 'centrocustos'),
+                       ('documentos', 'boletos'),
+                       ('observacoes',),
+            ],
+        }),
+        (None, {
+            "fields":[ 'pago', ('data_pagamento', 'descontos', 'juros', 'valor_pago'),
+
+            ],
+        }),
+    )
+
 
     @admin.display(description='Data de Compra')
     def data_competencia_br(self, obj):

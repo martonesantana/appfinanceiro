@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rangefilter',
     'phonenumber_field',
-    'localflavor',
     'apps.config',
     'apps.financeiro',
     'baton.autodiscover',
@@ -210,7 +209,7 @@ BATON = {
                 },
             )
         },
-                
+
         { 'type': 'title', 'label': 'Financeiro', 'app': 'financeiro' },
         {
             'type': 'app',
@@ -223,9 +222,9 @@ BATON = {
                     'label': 'Contas a Pagar',
                     'icon': 'fas fa-file-invoice-dollar',
                 },
-                
+
             )
         },
-    ),        
-    
+    ),
+
 }
